@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Page</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="showButton()">
+    <div id="loader"></div>
+    <button id="myBtn" class="hidden" onclick="location.href='{{ url_for('form') }}'">Enter</button>
+    <script>
+        function showButton() {
+            setTimeout(function() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myBtn").classList.remove("hidden");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
